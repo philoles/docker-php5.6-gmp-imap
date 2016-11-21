@@ -1,0 +1,18 @@
+version: '2'
+services:
+  php56:
+    image: philoles/docker-php5.6-gmp-imap
+    ports:
+      - "9000:9000"
+    # volumes:
+    #   - /home/web:/usr/src
+    #   - /home/conf/nginx/vconf:/etc/nginx/conf.d:ro
+    #   - /home/conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: always
+    container_name: php56
+    hostname: php56
+    networks:
+      - manage
+networks:
+  manage:
+    external: true  
